@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{908FB0D2-1D6B-4A69-864C-909CEAE220FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLBH</RootNamespace>
+    <AssemblyName>QLBH</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="FrmDanhSachKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDanhSachKhachHang.Designer.cs">
+      <DependentUpon>FrmDanhSachKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCuaSoChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCuaSoChinh.Designer.cs">
+      <DependentUpon>FrmCuaSoChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDSHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDSHangHoa.Designer.cs">
+      <DependentUpon>FrmDSHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDSHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDSHoaDonBan.Designer.cs">
+      <DependentUpon>FrmDSHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDSHoaDonMua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDSHoaDonMua.Designer.cs">
+      <DependentUpon>FrmDSHoaDonMua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHangHoaAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHangHoaAdd.Designer.cs">
+      <DependentUpon>FrmHangHoaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHoaDonBanAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHoaDonBanAdd.Designer.cs">
+      <DependentUpon>FrmHoaDonBanAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKhachHangAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKhachHangAdd.Designer.cs">
+      <DependentUpon>FrmKhachHangAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHoaDonMuaAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHoaDonMuaAdd.Designer.cs">
+      <DependentUpon>FrmHoaDonMuaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hang.cs" />
+    <Compile Include="HangBusiness.cs" />
+    <Compile Include="HangHoa.cs" />
+    <Compile Include="HangHoaBusiness.cs" />
+    <Compile Include="HoaDonBan.cs" />
+    <Compile Include="HoaDonBanBusiness.cs" />
+    <Compile Include="HoaDonMua.cs" />
+    <Compile Include="HoaDonMuaBusiness.cs" />
+    <Compile Include="KhachHang.cs" />
+    <Compile Include="KhachHangBusiness.cs" />
+    <Compile Include="KhachVip.cs" />
+    <Compile Include="KhachVipBusiness.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDanhSachKhachHang.resx">
+      <DependentUpon>FrmDanhSachKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCuaSoChinh.resx">
+      <DependentUpon>FrmCuaSoChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDSHangHoa.resx">
+      <DependentUpon>FrmDSHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDSHoaDonBan.resx">
+      <DependentUpon>FrmDSHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDSHoaDonMua.resx">
+      <DependentUpon>FrmDSHoaDonMua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHangHoaAdd.resx">
+      <DependentUpon>FrmHangHoaAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHoaDonBanAdd.resx">
+      <DependentUpon>FrmHoaDonBanAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKhachHangAdd.resx">
+      <DependentUpon>FrmKhachHangAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHoaDonMuaAdd.resx">
+      <DependentUpon>FrmHoaDonMuaAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\002.png" />
+    <Content Include="Images\007.png" />
+    <Content Include="Images\092.png" />
+    <Content Include="Images\103.png" />
+    <Content Include="Images\164.png" />
+    <Content Include="Images\48px-Crystal_Clear_app_noatun.png" />
+    <Content Include="Images\accept.png" />
+    <Content Include="Images\action_delete.gif" />
+    <Content Include="Images\action_down.gif" />
+    <Content Include="Images\action_export.gif" />
+    <Content Include="Images\action_settings.gif" />
+    <Content Include="Images\add-icon.png" />
+    <Content Include="Images\AddTableHS.png" />
+    <Content Include="Images\administrator2.gif" />
+    <Content Include="Images\appwindow_info_annotation_16.bmp" />
+    <Content Include="Images\attach.png" />
+    <Content Include="Images\attachment.gif" />
+    <Content Include="Images\bando.ico" />
+    <Content Include="Images\Bar Chart 3.png" />
+    <Content Include="Images\Bar Chart 4.png" />
+    <Content Include="Images\Bar Chart 5.png" />
+    <Content Include="Images\Bar Chart.png" />
+    <Content Include="Images\bin.png" />
+    <Content Include="Images\blockdevice32x32.png" />
+    <Content Include="Images\book_edit.png" />
+    <Content Include="Images\calendar.gif" />
+    <Content Include="Images\calendar16.gif" />
+    <Content Include="Images\cal_nextMonth.gif" />
+    <Content Include="Images\cal_prevMonth.gif" />
+    <Content Include="Images\cancel.gif" />
+    <Content Include="Images\chart.ico" />
+    <Content Include="Images\check-icon.png" />
+    <Content Include="Images\checked.gif" />
+    <Content Include="Images\CheckSpellingHS.png" />
+    <Content Include="Images\Clipboard Edit 2.png" />
+    <Content Include="Images\Clipboard Edit.png" />
+    <Content Include="Images\close-icon.png" />
+    <Content Include="Images\Cloud-Sun-icon.png" />
+    <Content Include="Images\cnMoPhong.ico" />
+    <Content Include="Images\cog.png" />
+    <Content Include="Images\col.gif" />
+    <Content Include="Images\Comment.png" />
+    <Content Include="Images\congbe.png" />
+    <Content Include="Images\Contact New.png" />
+    <Content Include="Images\contacts.gif" />
+    <Content Include="Images\CONTROL PANEL32x32.png" />
+    <Content Include="Images\cross.png" />
+    <Content Include="Images\Csdlchat_phantan.ico" />
+    <Content Include="Images\cs_su_co.ico" />
+    <Content Include="Images\Cute-Ball-Go-icon.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\delete2.gif" />
+    <Content Include="Images\deleted.gif" />
+    <Content Include="Images\deletedFolder.gif" />
+    <Content Include="Images\dnrt.gif" />
+    <Content Include="Images\doc.gif" />
+    <Content Include="Images\docs.gif" />
+    <Content Include="Images\drafts.gif" />
+    <Content Include="Images\DropCap.png" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\EditInformationHS.BMP" />
+    <Content Include="Images\EditTableHS.png" />
+    <Content Include="Images\edoc_register.gif" />
+    <Content Include="Images\Email New.png" />
+    <Content Include="Images\excel.gif" />
+    <Content Include="Images\Excellence Folder - Applications32x32.png" />
+    <Content Include="Images\exp.gif" />
+    <Content Include="Images\expired.gif" />
+    <Content Include="Images\expired_circle.gif" />
+    <Content Include="Images\expired_triangle.gif" />
+    <Content Include="Images\expired_warning.gif" />
+    <Content Include="Images\Favorite Check.png" />
+    <Content Include="Images\Favorite Delete.png" />
+    <Content Include="Images\find.png" />
+    <Content Include="Images\Folder-3-X7-3-icon.png" />
+    <Content Include="Images\folder-old-1-icon.png" />
+    <Content Include="Images\folder-open-icon.png" />
+    <Content Include="Images\folder.gif" />
+    <Content Include="Images\folders.gif" />
+    <Content Include="Images\folder_add.png" />
+    <Content Include="Images\folder_go.png" />
+    <Content Include="Images\folder_page.png" />
+    <Content Include="Images\frmlogin.png" />
+    <Content Include="Images\frmLogout.png" />
+    <Content Include="Images\gear_16.png" />
+    <Content Include="Images\GetLatestVersion.png" />
+    <Content Include="Images\Go.png" />
+    <Content Include="Images\graphhs.png" />
+    <Content Include="Images\Group 2 Search.png" />
+    <Content Include="Images\Group 3.png" />
+    <Content Include="Images\Group Help.png" />
+    <Content Include="Images\Group Idea.png" />
+    <Content Include="Images\header_logo.png" />
+    <Content Include="Images\heavy-sleet.gif" />
+    <Content Include="Images\Help-16x16.png" />
+    <Content Include="Images\help-icon.png" />
+    <Content Include="Images\Help.png" />
+    <Content Include="Images\Home 2.png" />
+    <Content Include="Images\HoTroTT.ico" />
+    <Content Include="Images\hourglass.png" />
+    <Content Include="Images\iCal-icon.png" />
+    <Content Include="Images\icon-login-16x16.gif" />
+    <Content Include="Images\icon-login-16x161.gif" />
+    <Content Include="Images\Icon1\date-time_preferences.ico" />
+    <Content Include="Images\Icon1\exchange.ico" />
+    <Content Include="Images\Icon1\Internet Document.png" />
+    <Content Include="Images\Icon1\mobilephone_79875.ico" />
+    <Content Include="Images\iconbar_undesigntab.gif" />
+    <Content Include="Images\icon_excel.gif" />
+    <Content Include="Images\icon_moduledefinitions_16px.gif" />
+    <Content Include="Images\icon_users_32px.gif" />
+    <Content Include="Images\inbox.gif" />
+    <Content Include="Images\InsertPictureHS.png" />
+    <Content Include="Images\insurance.png" />
+    <Content Include="Images\journal.gif" />
+    <Content Include="Images\journal1.gif" />
+    <Content Include="Images\junk.gif" />
+    <Content Include="Images\kate.ico" />
+    <Content Include="Images\kate32x32.png" />
+    <Content Include="Images\KDE  Resources Configuration32x32.png" />
+    <Content Include="Images\key2.png" />
+    <Content Include="Images\kuser32x32.png" />
+    <Content Include="Images\kword.ico" />
+    <Content Include="Images\law_16x16.gif" />
+    <Content Include="Images\library-icon.png" />
+    <Content Include="Images\List_BulletsHS.png" />
+    <Content Include="Images\List_NumberedHS.png" />
+    <Content Include="Images\Login Manager32x32.png" />
+    <Content Include="Images\login_icon.png" />
+    <Content Include="Images\logout.png" />
+    <Content Include="Images\mailbox.gif" />
+    <Content Include="Images\mail_inbox_in_32x32.png" />
+    <Content Include="Images\mail_inbox_out_32x32.png" />
+    <Content Include="Images\menu.gif" />
+    <Content Include="Images\MonthlyViewHS.png" />
+    <Content Include="Images\move.gif" />
+    <Content Include="Images\msg_forwarded.gif" />
+    <Content Include="Images\msg_read.gif" />
+    <Content Include="Images\msg_replied.gif" />
+    <Content Include="Images\msg_replied1.gif" />
+    <Content Include="Images\msg_unread.gif" />
+    <Content Include="Images\My Documents32x32.png" />
+    <Content Include="Images\new-icon.png" />
+    <Content Include="Images\new.png" />
+    <Content Include="Images\Notepad.ico" />
+    <Content Include="Images\notes.gif" />
+    <Content Include="Images\open-icon.png" />
+    <Content Include="Images\OpenFile.png" />
+    <Content Include="Images\outbox.gif" />
+    <Content Include="Images\PageUpHS.png" />
+    <Content Include="Images\paste-icon.png" />
+    <Content Include="Images\pdf.gif" />
+    <Content Include="Images\Pictures Search.png" />
+    <Content Include="Images\plus_16.png" />
+    <Content Include="Images\powerpoint.gif" />
+    <Content Include="Images\Printer New.png" />
+    <Content Include="Images\Printer Schedule.png" />
+    <Content Include="Images\Printer Search.png" />
+    <Content Include="Images\printer.png" />
+    <Content Include="Images\QlCauHinh.ico" />
+    <Content Include="Images\QLChatPhanTan32x32.png" />
+    <Content Include="Images\Qlnguoidung.ico" />
+    <Content Include="Images\ql_csdl_dau.ico" />
+    <Content Include="Images\ql_trangtb.ico" />
+    <Content Include="Images\QuanLy.ico" />
+    <Content Include="Images\QuanLyDau32x32.png" />
+    <Content Include="Images\QuanLyDau48x48.png" />
+    <Content Include="Images\QuanLySuCo32x32.png" />
+    <Content Include="Images\QuanLyThietBi32x32.png" />
+    <Content Include="Images\Quanlyvanban.ico" />
+    <Content Include="Images\QuanLyVanBan32x32.png" />
+    <Content Include="Images\register.gif" />
+    <Content Include="Images\renew.png" />
+    <Content Include="Images\ReSend.png" />
+    <Content Include="Images\right_16.png" />
+    <Content Include="Images\root.gif" />
+    <Content Include="Images\save-icon.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\scrolldown.gif" />
+    <Content Include="Images\scrolldown_active.gif" />
+    <Content Include="Images\scrolldown_hover.gif" />
+    <Content Include="Images\scrollup.gif" />
+    <Content Include="Images\scrollup_active.gif" />
+    <Content Include="Images\scrollup_hover.gif" />
+    <Content Include="Images\search.gif" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\searchFolder.gif" />
+    <Content Include="Images\search_files.png" />
+    <Content Include="Images\search_icon.gif" />
+    <Content Include="Images\select_all_16x16.gif" />
+    <Content Include="Images\sendmail.png" />
+    <Content Include="Images\sentItems.gif" />
+    <Content Include="Images\settings_16.png" />
+    <Content Include="Images\SortHS.png" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Images\SpeechMicHS.png" />
+    <Content Include="Images\spinner.gif" />
+    <Content Include="Images\spinner2.gif" />
+    <Content Include="Images\stop.gif" />
+    <Content Include="Images\stop.png" />
+    <Content Include="Images\support1.gif" />
+    <Content Include="Images\SychronizeListHS.png" />
+    <Content Include="Images\Symbol Refresh 3.png" />
+    <Content Include="Images\table.png" />
+    <Content Include="Images\table_add.png" />
+    <Content Include="Images\table_solid.png" />
+    <Content Include="Images\table_view.ico" />
+    <Content Include="Images\tasks.gif" />
+    <Content Include="Images\task_completed.png" />
+    <Content Include="Images\task_create.png" />
+    <Content Include="Images\Tech Edit 2.png" />
+    <Content Include="Images\Tech Search.png" />
+    <Content Include="Images\Thoat.ico" />
+    <Content Include="Images\top_calendar.gif" />
+    <Content Include="Images\top_contacts.gif" />
+    <Content Include="Images\top_folder.gif" />
+    <Content Include="Images\top_mail.gif" />
+    <Content Include="Images\top_notes.gif" />
+    <Content Include="Images\top_tasks.gif" />
+    <Content Include="Images\top_work_calendar.png" />
+    <Content Include="Images\top_work_new_.png" />
+    <Content Include="Images\top_work_out2.png" />
+    <Content Include="Images\top_work_search.png" />
+    <Content Include="Images\total_item.png" />
+    <Content Include="Images\TroGiup.ico" />
+    <Content Include="Images\unchecked.gif" />
+    <Content Include="Images\Update.png" />
+    <Content Include="Images\up_16.png" />
+    <Content Include="Images\Urban MSN2.ico" />
+    <Content Include="Images\User 7 Check.png" />
+    <Content Include="Images\User 7 Error.png" />
+    <Content Include="Images\user.gif" />
+    <Content Include="Images\user.png" />
+    <Content Include="Images\userOnline.gif" />
+    <Content Include="Images\users_family.ico" />
+    <Content Include="Images\users_into.ico" />
+    <Content Include="Images\view.gif" />
+    <Content Include="Images\Window Edit 2.png" />
+    <Content Include="Images\WindowsHS.png" />
+    <Content Include="Images\word.gif" />
+    <Content Include="Images\work_to_do.png" />
+    <Content Include="Images\work_to_send.png" />
+    <Content Include="Images\write email.png" />
+    <Content Include="Images\xls.gif" />
+    <Content Include="Images\ZoomHS.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,97 @@
+﻿.stanfButton
+{
+    /*border-top: 1px solid #DFDFDF;*/
+    border-left: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+    float: none;
+    margin: 0;
+    text-decoration: none;
+    background: #EAEAEA url(../images/white-grad.png) repeat-x left top;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bfbfbf;
+    padding: 4px;
+    display: inline;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 80%;
+    font-family: "Lucida Grande" , Tahoma, Arial, sans-serif;
+    line-height: 100%;
+    color: #3D3D3D;
+    -webkit-box-shadow: rgba(0,0,0,.15) 0px 1px 3px;
+    -moz-box-shadow: rgba(0,0,0,.15) 0px 1px 3px;
+    box-shadow: rgba(0,0,0,.15) 0px 1px 3px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: left;
+    height: 15px;
+    font-size: 11px;
+}
+.stanfButton a, .stanfButton a:link, .stanfButton a:visited
+{
+    color: #3D3D3D;
+}
+.stanfButton img
+{
+    margin: 0 2px -4px 0;
+    border: 0px solid #F37900;
+    height: 16px;
+}
+
+.stanfButton:hover
+{
+    border: 1px solid #F37900;
+    color: #F37900;
+}
+
+.stanfButton:active
+{
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#87BF81), to(#3B7F34));     background: -moz-linear-gradient(top, #87BF81, #3B7F34);*/
+    background: #F37900;
+    color: white;
+}
+
+   .stanford_group_field
+{
+    display: block;
+    font-family: Arial;
+    font-size: 12px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: rgba(0,0,0,.5) 0px 1px 2px;
+    moz-box-shadow: rgba(0,0,0,.5) 0px 1px 2px 4px;
+    vertical-align: middle;
+    padding-top: 20px;
+    display: block;
+    border: solid 1px lightgrey;
+    border-radius: 10px 10px 10px 10px;
+    font-weight: bold;
+    color: midnightblue;
+    background-color: #ffffff;
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    width:450px;
+}
+
+.login_group_field
+{
+    display: block;
+    font-family: Arial;
+    font-size: 12px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: rgba(0,0,0,.5) 0px 1px 2px;
+    moz-box-shadow: rgba(0,0,0,.5) 0px 1px 2px 4px;
+    position: absolute;
+    vertical-align: middle;
+    padding-top: 20px;
+    border: solid 1px lightgrey;
+    border-radius: 10px 10px 10px 10px;
+    font-weight: bold;
+    color: midnightblue;
+    background: #ffffff url('../images/login_icon.png') no-repeat right;
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    width:350px;
+}
