@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLBaiVietModelStoreContainer" CdmEntityContainer="QLBaiVietEntities">
+    <EntitySetMapping Name="BaiViets">
+      <EntityTypeMapping TypeName="QLBaiVietModel.BaiViet">
+        <MappingFragment StoreEntitySet="BaiViet">
+          <ScalarProperty Name="IdBaiViet" ColumnName="IdBaiViet" />
+          <ScalarProperty Name="IdDanhMuc" ColumnName="IdDanhMuc" />
+          <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
+          <ScalarProperty Name="IdLoaiTin" ColumnName="IdLoaiTin" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayXuatBan" ColumnName="NgayXuatBan" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="AnhBaiViet" ColumnName="AnhBaiViet" />
+          <ScalarProperty Name="TacGia" ColumnName="TacGia" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BinhLuans">
+      <EntityTypeMapping TypeName="QLBaiVietModel.BinhLuan">
+        <MappingFragment StoreEntitySet="BinhLuan">
+          <ScalarProperty Name="IdBinhLuan" ColumnName="IdBinhLuan" />
+          <ScalarProperty Name="IdBaiViet" ColumnName="IdBaiViet" />
+          <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
+          <ScalarProperty Name="TenNguoiDung" ColumnName="TenNguoiDung" />
+          <ScalarProperty Name="NgayBinhLuan" ColumnName="NgayBinhLuan" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChucNangPhamMems">
+      <EntityTypeMapping TypeName="QLBaiVietModel.ChucNangPhamMem">
+        <MappingFragment StoreEntitySet="ChucNangPhamMem">
+          <ScalarProperty Name="IdChucNang" ColumnName="IdChucNang" />
+          <ScalarProperty Name="TenChucNang" ColumnName="TenChucNang" />
+          <ScalarProperty Name="TenForm" ColumnName="TenForm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucs">
+      <EntityTypeMapping TypeName="QLBaiVietModel.DanhMuc">
+        <MappingFragment StoreEntitySet="DanhMuc">
+          <ScalarProperty Name="IdDanhMuc" ColumnName="IdDanhMuc" />
+          <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiTins">
+      <EntityTypeMapping TypeName="QLBaiVietModel.LoaiTin">
+        <MappingFragment StoreEntitySet="LoaiTin">
+          <ScalarProperty Name="IdLoaiTin" ColumnName="IdLoaiTin" />
+          <ScalarProperty Name="TenLoaiTin" ColumnName="TenLoaiTin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="QLBaiVietModel.NguoiDung">
+        <MappingFragment StoreEntitySet="NguoiDung">
+          <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
+          <ScalarProperty Name="IdVaiTro" ColumnName="IdVaiTro" />
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="TenNguoiDung" ColumnName="TenNguoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VaiTroes">
+      <EntityTypeMapping TypeName="QLBaiVietModel.VaiTro">
+        <MappingFragment StoreEntitySet="VaiTro">
+          <ScalarProperty Name="IdVaiTro" ColumnName="IdVaiTro" />
+          <ScalarProperty Name="TenVaiTro" ColumnName="TenVaiTro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VaiTro_ChucNangPhamMem">
+      <EntityTypeMapping TypeName="QLBaiVietModel.VaiTro_ChucNangPhamMem">
+        <MappingFragment StoreEntitySet="VaiTro_ChucNangPhamMem">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdChucNang" ColumnName="IdChucNang" />
+          <ScalarProperty Name="IdVaiTro" ColumnName="IdVaiTro" />
+          <ScalarProperty Name="Xem" ColumnName="Xem" />
+          <ScalarProperty Name="Them" ColumnName="Them" />
+          <ScalarProperty Name="Sua" ColumnName="Sua" />
+          <ScalarProperty Name="Xoa" ColumnName="Xoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

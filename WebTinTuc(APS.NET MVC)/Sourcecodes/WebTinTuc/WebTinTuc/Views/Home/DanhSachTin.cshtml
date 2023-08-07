@@ -1,0 +1,53 @@
+﻿@model PagedList.IPagedList<WebTinTuc.Models.BaiViet>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "DanhSachTin";
+    Layout = "~/Views/Shared/ListNewFeed.cshtml";
+}
+
+<h2><span>Danh Sách Tin</span></h2>
+
+@{
+    int i = 0;
+}
+@foreach (var item in Model)
+{
+    if (item.TrangThai == true)
+    {
+        if (i % 2 == 0)
+        {
+            <div class="single_post_content_left">
+                <ul class="business_catgnav  wow fadeInDown">
+
+                    <li>
+                        <figure class="bsbig_fig" style="width:500px; height:500px">
+                            <a href="~/Home/ChiTiet?id=@item.IdBaiViet" class="featured_img"> <img alt="" src="~/Content/Images/@item.AnhBaiViet" style="width:500px; height:300px"> <span class="overlay"></span> </a>
+                            <figcaption> <a href="~/Home/ChiTiet?id=@item.IdBaiViet">@item.TieuDe</a> </figcaption>
+                            <p>@item.MoTa</p>
+                        </figure>
+                    </li>
+                </ul>
+            </div>;
+        }
+        else
+        {
+            <div class="single_post_content_right">
+                <ul class="business_catgnav  wow fadeInDown">
+                    <li>
+                        <figure class="bsbig_fig" style="width:500px; height:500px">
+                            <a href="~/Home/ChiTiet?id=@item.IdBaiViet" class="featured_img"> <img alt="" src="~/Content/Images/@item.AnhBaiViet" style="width:500px; height:300px"> <span class="overlay"></span> </a>
+                            <figcaption> <a href="~/Home/ChiTiet?id=@item.IdBaiViet">@item.TieuDe</a> </figcaption>
+                            <p>@item.MoTa</p>
+                        </figure>
+                    </li>
+                </ul>
+            </div>;
+        }
+        i++;
+    }
+}
+<div style="text-align:center">
+    Trang số @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) trên @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("DanhSachTin", new { page }))
+</div>

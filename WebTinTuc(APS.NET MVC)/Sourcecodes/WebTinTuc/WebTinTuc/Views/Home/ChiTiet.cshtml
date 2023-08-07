@@ -1,0 +1,142 @@
+﻿@using WebTinTuc.Models
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/TrangChuNewFeed.cshtml";
+    var info = (NguoiDung)Session["useronline"];
+    
+}
+    @model WebTinTuc.Models.BaiViet
+    <section id="navArea">
+    
+        <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav main_nav">
+                <li class="active"><a href="~/Home/TrangChu"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=1">Đời Sống</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=2">Thể Thao</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=12">Du Lịch</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=3">Chính Trị</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=4">Văn Hóa</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=5">Khoa Học</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=6">Thế Giới</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<section id="contentSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="left_content">
+                <div class="single_page">
+
+
+                    <div class="single_page_content">
+                        <div class="post_commentbox" style="text-align:right">
+                            <a href="#"><i class="fa fa-user"></i>@Model.TacGia</a>
+                            <span><i class="fa fa-calendar"></i>@Model.NgayXuatBan</span>
+                        </div>
+                        @Html.Raw(@Model.NoiDung);
+
+                    </div>
+                    <div class="related_post">
+                        <h2>Bình luận <i class="fa fa-thumbs-o-up"></i></h2>
+
+                        @if (info != null)
+                        {
+                            using (Html.BeginForm("ThemMoiBinhLuan", "BinhLuan", new { idbaiviet = @Model.IdBaiViet, idnguoidung = info.IdNguoiDung , tenNguoiDung= info.TenNguoiDung }, FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                               <i class="fa fa-user"> </i> <strong>@info.TenNguoiDung </strong>
+                               
+                                @Html.TextAreaFor(m =>m.comment.NoiDung, new
+                                   {
+                                       @class = "form-control",
+                                       @cols = "30",
+                                       @rows = "5",
+                                       @id = "NoiDung",
+                                       @name = "NoiDung",
+                                       @placeholder = "Bình luận"
+                                   });
+
+                                <input type="submit" value="Bình luận" id="btn-dangky" style="background: #d95555; color: #fff; cursor: pointer;height: 50px;
+                                      width: 100px;
+                                      outline: none;
+                                      border: 1.5px solid #dadce0;
+                                      padding: 10px;
+                                      margin-top: 15px;
+                                      border-radius: 5px;
+                                      font-size: inherit;
+                                      color: #fbfcff;
+                                      transition: all 0.3s ease-in-out;">
+                            }
+                        }
+                        else
+                        {
+                            <p>Hãy đăng nhập để có thể bình luận</p>
+                        }
+                        <ul>
+                            @foreach (var comment in Model.BinhLuans)
+                            {
+                                <li>
+                                    <i class="fa fa-user"> </i> <strong>@comment.TenNguoiDung</strong> <i class="fa fa-calendar"> </i>  @Convert.ToDateTime(comment.NgayBinhLuan).ToString("dd/MM/yyyy"): <br />
+
+                                    @comment.NoiDung
+                                </li>
+                            }
+                        </ul>
+
+
+                    </div>
+                    <div class="social_link">
+                        <ul class="sociallink_nav">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <aside class="right_content">
+                <div class="single_sidebar wow fadeInDown">
+                    <h2><span>Ảnh</span></h2>
+                    <a class="sideAdd" href="#"><img src="~/Content/Images/add_img.jpg" alt=""></a>
+                </div>
+                <div class="single_sidebar wow fadeInDown">
+                    <h2><span>Danh mục</span></h2>
+                    <select class="catgArchive">
+                        <option>Thể thao</option>
+                        <option>Thế giới</option>
+                        <option>Khoa học</option>
+
+                    </select>
+                </div>
+                <div class="single_sidebar wow fadeInDown">
+                    <h2><span>Link linh tinh</span></h2>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Ảnh</a></li>
+                        <li><a href="#">Cuộc sống</a></li>
+                        
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+

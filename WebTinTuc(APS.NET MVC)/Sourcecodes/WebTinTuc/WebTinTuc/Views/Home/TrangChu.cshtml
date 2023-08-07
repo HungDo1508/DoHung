@@ -1,0 +1,207 @@
+﻿
+@model IEnumerable<WebTinTuc.Models.BaiViet>
+
+
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/TrangChuNewFeed.cshtml";
+}
+<script>
+
+        // Kiểm tra xem TempData có thông báo thành công không
+        var successMessage = "@TempData["SuccessMessage"]";
+        if (successMessage !== "") {
+            alert(successMessage); // Hiển thị thông báo thành công
+        }
+</script>
+<section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only"> </span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav main_nav">
+                <li class="active"><a href="~/Home/TrangChu"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=1">Đời Sống</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=2">Thể Thao</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=12">Du Lịch</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=3">Chính Trị</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=4">Văn Hóa</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=5">Khoa Học</a></li>
+                <li><a href="~/Home/DanhSachTin?&IdDanhMuc=6">Thế Giới</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<section id="newsSection">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="latest_newsarea">
+                <span>TIN MỚI</span>
+                <ul id="ticker01" class="news_sticker">
+                    @foreach (var item in Model)
+                    {
+                        if (item.IdLoaiTin == "TM")
+                        {
+                            <li><a href="~/Home/ChiTiet?id=@item.IdBaiViet"><img src="~/Content/Images/@item.AnhBaiViet" alt="">@item.TieuDe</a></li>
+                        }
+                    }
+                </ul>
+                <div class="social_area">
+                    <ul class="social_nav">
+                        <li class="facebook"><a href="#"></a></li>
+                        <li class="twitter"><a href="#"></a></li>
+                        <li class="flickr"><a href="#"></a></li>
+                        <li class="pinterest"><a href="#"></a></li>
+                        <li class="googleplus"><a href="#"></a></li>
+                        <li class="vimeo"><a href="#"></a></li>
+                        <li class="youtube"><a href="#"></a></li>
+                        <li class="mail"><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sliderSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="slick_slider">
+                @foreach (var item in Model)
+                {
+
+                    <div class="single_iteam">
+                        <a href="~/Home/ChiTiet?id=@item.IdBaiViet"> <img src="~/Content/Images/@item.AnhBaiViet" alt=""></a>
+                        <div class="slider_article">
+                            <h2><a class="slider_tittle" href="~/Home/ChiTiet?id=@item.IdBaiViet">@item.TieuDe</a></h2>
+                            <p>@item.MoTa</p>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="latest_post">
+                <h2><span>Tin HOT</span></h2>
+                <div class="latest_post_container">
+                    <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+                    <ul class="latest_postnav" style="height:390px">
+                        @foreach (var item in Model)
+                        {
+                            if (item.IdLoaiTin == "TN")
+                            {
+                                <li>
+                                    <div class="media">
+
+                                        <a href="~/Home/ChiTiet?id=@item.IdBaiViet" class="media-left"> <img alt="" src="~/Content/Images/@item.AnhBaiViet"> </a>
+                                        <div class="media-body"> <a href="~/Home/ChiTiet?id=@item.IdBaiViet" class="catg_title"> @item.TieuDe</a> </div>
+                                    </div>
+                                </li>
+
+                            }
+                        }
+
+
+                    </ul>
+                    <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contentSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="left_content">
+                <div class="single_post_content">
+                    <h2><span>Danh Sách Tin</span></h2>
+
+                    @{
+                        int i = 0;
+                    }
+                    @foreach (var item in Model.Take(4).ToList())
+                    {
+
+                        if (i % 2 == 0)
+                        {
+                            <div class="single_post_content_left">
+                                <ul class="business_catgnav  wow fadeInDown">
+
+                                    <li>
+                                        <figure class="bsbig_fig" style="width:300px; height:400px">
+                                            <a href="~/Home/ChiTiet?id=@item.IdBaiViet" class="featured_img"> <img alt="" src="~/Content/Images/@item.AnhBaiViet" style="width:300px; height:200px"> <span class="overlay"></span> </a>
+                                            <figcaption> <a href="ChiTiet?id=@item.IdBaiViet">@item.TieuDe</a> </figcaption>
+                                            <p>@item.MoTa</p>
+                                        </figure>
+                                    </li>
+                                </ul>
+                            </div>;
+                        }
+                        else
+                        {
+                            <div class="single_post_content_right">
+                                <ul class="business_catgnav  wow fadeInDown">
+                                    <li>
+                                        <figure class="bsbig_fig" style="width:300px; height:400px">
+                                            <a href="~/Home/ChiTiet?id=@item.IdBaiViet" class="featured_img"> <img alt="" src="~/Content/Images/@item.AnhBaiViet" style="width:300px; height:200px"> <span class="overlay"></span> </a>
+                                            <figcaption> <a href="~/Home/ChiTiet?id=@item.IdBaiViet">@item.TieuDe</a> </figcaption>
+                                            <p>@item.MoTa</p>
+                                        </figure>
+                                    </li>
+                                </ul>
+                            </div>;
+                        }
+                        i++;
+
+                    }
+
+                    <div style="font-size:20px ; text-align:right;">
+                        @Html.ActionLink("Xem Thêm", "DanhSachTin")
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <aside class="right_content">
+                <div class="latest_post">
+                    <h2><span>TIN MỚI</span></h2>
+                    <div class="latest_post_container">
+                        <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+                        <ul class="latest_postnav" style="height:390px">
+                            @foreach (var item in Model)
+                            {
+                                if (item.IdLoaiTin == "TM")
+                                {
+                                    <li>
+                                        <div class="media wow fadeInDown">
+                                            <a href="~/Home/ChiTiet?id=@item.IdBaiViet" class="media-left"> <img alt="" src="~/Content/Images/@item.AnhBaiViet"> </a>
+                                            <div class="media-body"> <a href="~/Home/ChiTiet?id=@item.IdBaiViet" class="catg_title">@item.TieuDe</a> </div>
+                                        </div>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                        <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+                    </div>
+                </div>
+                <div class="single_sidebar wow fadeInDown">
+                    <h2><span>Ảnh</span></h2>
+                    <a class="sideAdd" href="#"><img src="~/Content/Images/add_img.jpg" alt=""></a>
+                </div>
+                <div class="single_sidebar wow fadeInDown">
+                    <h2><span>Danh mục</span></h2>
+                    <select class="catgArchive">
+                        <option>Thể thao</option>
+                        <option>Thế giới</option>
+                        <option>Khoa học</option>
+                        
+                    </select>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+</section>
