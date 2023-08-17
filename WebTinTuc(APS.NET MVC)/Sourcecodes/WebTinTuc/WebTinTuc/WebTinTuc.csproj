@@ -284,6 +284,7 @@
     <Content Include="Content\Images\a14.jpg" />
     <Content Include="Content\Images\aa.jpg" />
     <Content Include="Content\Images\aaa.png" />
+    <Content Include="Content\Images\aaaaa.jpg" />
     <Content Include="Content\Images\addbanner.jpg" />
     <Content Include="Content\Images\addbanner_728x90_V1.jpg" />
     <Content Include="Content\Images\add_img.jpg" />
@@ -346,6 +347,7 @@
     <Content Include="Content\Images\logo\logo.png" />
     <Content Include="Content\Images\logo\logo_black.png" />
     <Content Include="Content\Images\logo\logo_icon.png" />
+    <Content Include="Content\Images\minion.jpg" />
     <Content Include="Content\Images\news_thumbnail2.jpg" />
     <Content Include="Content\Images\news_thumbnail3.jpg" />
     <Content Include="Content\Images\opnana-1689665135-8126-1689665490.jpg" />

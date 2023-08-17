@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QLBaiVietModelStoreContainer" CdmEntityContainer="QLBaiVietEntities">
+  <EntityContainerMapping StorageEntityContainer="HermesdiaModelStoreContainer" CdmEntityContainer="QuanLyBaiVietEntities">
     <EntitySetMapping Name="BaiViets">
-      <EntityTypeMapping TypeName="QLBaiVietModel.BaiViet">
+      <EntityTypeMapping TypeName="HermesdiaModel.BaiViet">
         <MappingFragment StoreEntitySet="BaiViet">
           <ScalarProperty Name="IdBaiViet" ColumnName="IdBaiViet" />
           <ScalarProperty Name="IdDanhMuc" ColumnName="IdDanhMuc" />
@@ -21,7 +21,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="BinhLuans">
-      <EntityTypeMapping TypeName="QLBaiVietModel.BinhLuan">
+      <EntityTypeMapping TypeName="HermesdiaModel.BinhLuan">
         <MappingFragment StoreEntitySet="BinhLuan">
           <ScalarProperty Name="IdBinhLuan" ColumnName="IdBinhLuan" />
           <ScalarProperty Name="IdBaiViet" ColumnName="IdBaiViet" />
@@ -33,7 +33,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ChucNangPhamMems">
-      <EntityTypeMapping TypeName="QLBaiVietModel.ChucNangPhamMem">
+      <EntityTypeMapping TypeName="HermesdiaModel.ChucNangPhamMem">
         <MappingFragment StoreEntitySet="ChucNangPhamMem">
           <ScalarProperty Name="IdChucNang" ColumnName="IdChucNang" />
           <ScalarProperty Name="TenChucNang" ColumnName="TenChucNang" />
@@ -42,7 +42,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DanhMucs">
-      <EntityTypeMapping TypeName="QLBaiVietModel.DanhMuc">
+      <EntityTypeMapping TypeName="HermesdiaModel.DanhMuc">
         <MappingFragment StoreEntitySet="DanhMuc">
           <ScalarProperty Name="IdDanhMuc" ColumnName="IdDanhMuc" />
           <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
@@ -50,7 +50,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LoaiTins">
-      <EntityTypeMapping TypeName="QLBaiVietModel.LoaiTin">
+      <EntityTypeMapping TypeName="HermesdiaModel.LoaiTin">
         <MappingFragment StoreEntitySet="LoaiTin">
           <ScalarProperty Name="IdLoaiTin" ColumnName="IdLoaiTin" />
           <ScalarProperty Name="TenLoaiTin" ColumnName="TenLoaiTin" />
@@ -58,18 +58,21 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NguoiDungs">
-      <EntityTypeMapping TypeName="QLBaiVietModel.NguoiDung">
+      <EntityTypeMapping TypeName="HermesdiaModel.NguoiDung">
         <MappingFragment StoreEntitySet="NguoiDung">
           <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
           <ScalarProperty Name="IdVaiTro" ColumnName="IdVaiTro" />
           <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="TenNguoiDung" ColumnName="TenNguoiDung" />
+          <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="VaiTroes">
-      <EntityTypeMapping TypeName="QLBaiVietModel.VaiTro">
+      <EntityTypeMapping TypeName="HermesdiaModel.VaiTro">
         <MappingFragment StoreEntitySet="VaiTro">
           <ScalarProperty Name="IdVaiTro" ColumnName="IdVaiTro" />
           <ScalarProperty Name="TenVaiTro" ColumnName="TenVaiTro" />
@@ -77,7 +80,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="VaiTro_ChucNangPhamMem">
-      <EntityTypeMapping TypeName="QLBaiVietModel.VaiTro_ChucNangPhamMem">
+      <EntityTypeMapping TypeName="HermesdiaModel.VaiTro_ChucNangPhamMem">
         <MappingFragment StoreEntitySet="VaiTro_ChucNangPhamMem">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdChucNang" ColumnName="IdChucNang" />

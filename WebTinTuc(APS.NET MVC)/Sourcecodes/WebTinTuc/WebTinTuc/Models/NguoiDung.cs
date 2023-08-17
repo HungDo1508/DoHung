@@ -26,6 +26,9 @@ namespace WebTinTuc.Models
         public string TaiKhoan { get; set; }
         public string MatKhau { get; set; }
         public string TenNguoiDung { get; set; }
+        public string AnhDaiDien { get; set; }
+        public string Email { get; set; }
+        public string DienThoai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiViet> BaiViets { get; set; }

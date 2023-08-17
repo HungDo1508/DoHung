@@ -10,15 +10,15 @@ namespace WebTinTuc.Models
         /// <summary>
         /// Khai báo 1 thuộc tính để làm việc với db bằng EF
         /// </summary>
-        private static QLBaiVietEntities _Entities = null;
+        private static QuanLyBaiVietEntities _Entities = null;
 
-        public static QLBaiVietEntities Entities
+        public static QuanLyBaiVietEntities Entities
         {
             get
             {
                 if (_Entities == null)
                 {
-                    _Entities = new QLBaiVietEntities();
+                    _Entities = new QuanLyBaiVietEntities();
                 }
 
                 return _Entities;

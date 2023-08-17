@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="29349cd57a024c798fcba7582de4d4cc" Name="Diagram1">
-        <EntityTypeShape EntityType="QLBaiVietModel.BaiViet" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBaiVietModel.BinhLuan" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBaiVietModel.ChucNangPhamMem" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBaiVietModel.DanhMuc" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBaiVietModel.LoaiTin" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBaiVietModel.NguoiDung" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBaiVietModel.VaiTro" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBaiVietModel.VaiTro_ChucNangPhamMem" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="QLBaiVietModel.FK__Baiviet__iddanhm__300424B4" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBaiVietModel.FK_BaiViet_LoaiTin" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBaiVietModel.FK_BaiViet_NguoiDung" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBaiVietModel.FK_BinhLuan_BaiViet" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBaiVietModel.FK_BinhLuan_NguoiDung1" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBaiVietModel.FK_VaiTro_ChucNangPhamMem_ChucNangPhamMem" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBaiVietModel.FK__NguoiDung__idchu__33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBaiVietModel.FK_VaiTro_ChucNangPhamMem_VaiTro" ManuallyRouted="false" />
+      <Diagram DiagramId="7db44585dac54b438497ecbac6eaff31" Name="Diagram1">
+        <EntityTypeShape EntityType="HermesdiaModel.BaiViet" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="HermesdiaModel.BinhLuan" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HermesdiaModel.ChucNangPhamMem" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HermesdiaModel.DanhMuc" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HermesdiaModel.LoaiTin" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HermesdiaModel.NguoiDung" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HermesdiaModel.VaiTro" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HermesdiaModel.VaiTro_ChucNangPhamMem" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="HermesdiaModel.FK__Baiviet__iddanhm__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="HermesdiaModel.FK_BaiViet_LoaiTin" ManuallyRouted="false" />
+        <AssociationConnector Association="HermesdiaModel.FK_BaiViet_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="HermesdiaModel.FK_BinhLuan_BaiViet" ManuallyRouted="false" />
+        <AssociationConnector Association="HermesdiaModel.FK_BinhLuan_NguoiDung1" ManuallyRouted="false" />
+        <AssociationConnector Association="HermesdiaModel.FK_VaiTro_ChucNangPhamMem_ChucNangPhamMem" ManuallyRouted="false" />
+        <AssociationConnector Association="HermesdiaModel.FK__NguoiDung__idchu__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="HermesdiaModel.FK_VaiTro_ChucNangPhamMem_VaiTro" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -21,7 +21,7 @@ namespace WebTinTuc.Controllers
 
             return View(lstBinhLuan);
         }
-
+       
         public ActionResult ThemMoiBinhLuan()
         {
 
@@ -31,7 +31,7 @@ namespace WebTinTuc.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-      
+        
         public ActionResult ThemMoiBinhLuan(int idbaiviet, int idnguoidung, string tenNguoiDung, BinhLuan objBinhLuan, HomeModel home)
         {
             if (ModelState.IsValid)//true

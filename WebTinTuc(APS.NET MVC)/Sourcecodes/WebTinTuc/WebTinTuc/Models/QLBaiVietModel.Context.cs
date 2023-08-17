@@ -13,10 +13,10 @@ namespace WebTinTuc.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLBaiVietEntities : DbContext
+    public partial class QuanLyBaiVietEntities : DbContext
     {
-        public QLBaiVietEntities()
-            : base("name=QLBaiVietEntities")
+        public QuanLyBaiVietEntities()
+            : base("name=QuanLyBaiVietEntities")
         {
         }
     

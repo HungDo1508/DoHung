@@ -82,6 +82,7 @@
                             @foreach (var comment in Model.BinhLuans)
                             {
                                 <li>
+
                                     <i class="fa fa-user"> </i> <strong>@comment.TenNguoiDung</strong> <i class="fa fa-calendar"> </i>  @Convert.ToDateTime(comment.NgayBinhLuan).ToString("dd/MM/yyyy"): <br />
 
                                     @comment.NoiDung

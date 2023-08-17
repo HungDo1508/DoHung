@@ -58,9 +58,16 @@
                     <div class="sidebar_user_info">
                         <div class="icon_setting"></div>
                         <div class="user_profle_side">
-                            <div class="user_img"><img class="img-responsive" src="~/Content/Images/avt.jpg" alt="#" /></div>
+                            @if (info != null)
+                            {
+                                <div class="user_img"><img class="img-responsive" src="~/Content/Images/@info.AnhDaiDien" alt="#" /></div>
+                            }
+                           
                             <div class="user_info">
-                                <h6>@info.TenNguoiDung</h6>
+                                @if (info != null)
+                                {
+                                    <h6>@info.TenNguoiDung</h6>
+                                }
                                 <p><span class="online_animation"></span> Online</p>
                             </div>
                         </div>
@@ -100,9 +107,15 @@
                                     <ul class="user_profile_dd">
                                         <li>
                                             <a class="dropdown-toggle" data-toggle="dropdown">
-                                                <img class="img-responsive rounded-circle" src="~/Content/Images/avt.jpg" alt="#" />
-                                                <span class="name_user">@info.TenNguoiDung</span>
-                                            </a>
+                                                
+                                                @if (info != null)
+                                                {
+                                                    <img class="img-responsive rounded-circle" src="~/Content/Images/@info.AnhDaiDien" alt="#" />
+                                                    <span class="name_user">@info.TenNguoiDung</span>
+                                                }
+                                                
+                                                </a>
+
                                             <div class="dropdown-menu">
                                                
                                                 

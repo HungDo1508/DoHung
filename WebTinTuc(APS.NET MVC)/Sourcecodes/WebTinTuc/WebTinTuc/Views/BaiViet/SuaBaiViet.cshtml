@@ -14,80 +14,68 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
+<div class="border-bottom">
     <h4>Thông tin bài viết</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        Id bài viết
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Tiêu đề <a style="color:red">*</a> :</label>
+
         <div class="col-md-10">
-            @Html.EditorFor(model => model.IdBaiViet, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.IdBaiViet, "", new { @class = "text-danger" })
+
+            @Html.EditorFor(model => model.TieuDe, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TieuDe, "", new { @class = "text-danger" })
+
         </div>
     </div>
-    <div class="form-group">
-        Danh mục
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Mô tả <a style="color:red">*</a> :</label>
         <div class="col-md-10">
+            @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"> Danh mục:</label>
+        <div class="col-md-4">
             @Html.DropDownList("IdDanhMuc",
-            (SelectList)ViewBag.DanhMuc, "---Chọn danh mục---", new { @class = "form-control" })
+           (SelectList)ViewBag.DanhMuc, "---Chọn danh mục---", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.IdDanhMuc, "", new { @class = "text-danger" })
         </div>
-    </div>
-
-    <div class="form-group">
-        Loại tin
-        <div class="col-md-10">
+        <label for="staticEmail" class="col-sm-2 col-form-label"> Loại tin:</label>
+        <div class="col-md-4">
             @*Hiển thị danh sách loại tin*@
             @Html.DropDownList("IdLoaiTin",
             (SelectList)ViewBag.LoaiTin, "---Chọn loại tin---", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.IdLoaiTin, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="form-group">
-        Tiêu đề
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TieuDe, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TieuDe, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        Mô tả
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        Nội dung
-        <div class="col-md-10">
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.NoiDung, new { @id = "ckeContent" })
-                <script>
-                    CKEDITOR.replace("ckeContent");
-                </script>
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-        Ảnh bài viết
-        <div class="col-md-10">
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"> Ảnh bài viết:</label>
+        <div class="col-md-4">
             <input type="file" name="fUpload" />
             @Html.HiddenFor(model => model.AnhBaiViet, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.AnhBaiViet, "", new { @class = "text-danger" })
         </div>
-    </div>
-    <div class="form-group">
-        Tác giả
-        <div class="col-md-10">
+        <label for="staticEmail" class="col-sm-2 col-form-label"> Tác giả:</label>
+        <div class="col-md-4">
             @Html.EditorFor(model => model.TacGia, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.TacGia, "", new { @class = "text-danger" })
         </div>
-    </div>
 
+    </div>
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"> Nội dung <a style="color:red">*</a>:</label>
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.NoiDung, new { @id = "ckeContent" })
+            <script>
+                CKEDITOR.replace("ckeContent");
+            </script>
+        </div>
+    </div>
+    @Html.HiddenFor(model => model.IdBaiViet, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.IdBaiViet, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.TrangThai, new { htmlAttributes = new { @class = "form-control" } })
     @Html.ValidationMessageFor(model => model.TrangThai, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.NgayXuatBan, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
@@ -95,11 +83,10 @@
     @Html.HiddenFor(model => model.NgayTao, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
     @Html.ValidationMessageFor(model => model.NgayTao, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
+        <div class="col-md-12" style="text-align:right">
             <input type="submit" value="Cập nhật" class="btn btn-primary" />
         </div>
-    </div>
+    
 </div>
 }
 

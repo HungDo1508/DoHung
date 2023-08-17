@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="QLBaiVietModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="HermesdiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="BaiViet">
     <Key>
       <PropertyRef Name="IdBaiViet" />
@@ -60,6 +60,9 @@
     <Property Name="TaiKhoan" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="MatKhau" Type="varchar" MaxLength="50" />
     <Property Name="TenNguoiDung" Type="nvarchar" MaxLength="50" />
+    <Property Name="AnhDaiDien" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="VaiTro">
     <Key>
@@ -176,7 +179,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QLBaiVietModelStoreContainer">
+  <EntityContainer Name="HermesdiaModelStoreContainer">
     <EntitySet Name="BaiViet" EntityType="Self.BaiViet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BinhLuan" EntityType="Self.BinhLuan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChucNangPhamMem" EntityType="Self.ChucNangPhamMem" Schema="dbo" store:Type="Tables" />
